@@ -8,5 +8,5 @@ RUN go mod tidy \
     && go build cmd/main.go
 FROM scratch AS ginserver
 COPY --from=builder /app/ /
-EXPOSE 8080
+EXPOSE 3000
 ENTRYPOINT ["/main"]

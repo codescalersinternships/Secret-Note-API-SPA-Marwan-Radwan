@@ -45,6 +45,7 @@ func (s *Server) GetNoteByID(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 
 	}
+
 	ctx.JSON(http.StatusOK, note)
 }
 

@@ -1,0 +1,20 @@
+version: "3.4"
+services:
+  secretnote_api:
+    container_name: secretnote_api
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+      target: secretnoteserver
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+
+  secretnote_spa:
+    container_name: secretnote_spa
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
